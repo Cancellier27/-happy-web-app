@@ -33,7 +33,7 @@ This project was made with the following technologies:
 <!-- - [TypeScript](https://www.typescriptlang.org/) -->
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
-- [Typescript](https://typescript.com)
+- [Typescript](https://www.typescriptlang.org/)
 <!-- - [React Native](https://reactnative.dev/) -->
 
 ## :fire: How to
