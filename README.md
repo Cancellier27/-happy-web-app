@@ -1,7 +1,7 @@
 <h3 align="center">
     <img alt="Logo" title="#logo" width="300px" src=".github/iconWebDev.png">
     <br><br>
-    <b>Personal site</b> 
+    <b>Happy App</b> 
 </h3>
 
 <p align="center">
@@ -24,7 +24,7 @@
 
 ## :bookmark: About
 
-My webpage created with React.
+App to help finding a Orphanage close to you, where you'll be able to make a kid happy :D.
 
 ## :rocket: Tech Used
 
@@ -33,14 +33,17 @@ This project was made with the following technologies:
 <!-- - [TypeScript](https://www.typescriptlang.org/) -->
 - [Node.js](https://nodejs.org/en/)
 - [ReactJS](https://reactjs.org/)
+- [Typescript](https://typescript.com)
 <!-- - [React Native](https://reactnative.dev/) -->
 
 ## :fire: How to
 
 - ### **Requirements**
 
-  - It's **necessary** **[Node.js](https://nodejs.org/en/)**
-  - You, **need** a package manager like **[NPM](https://www.npmjs.com/)** or **[Yarn](https://yarnpkg.com/)**.
+  - Still working on this...
+
+  <!-- - It's **necessary** **[Node.js](https://nodejs.org/en/)**
+  - You, **need** a package manager like **[NPM](https://www.npmjs.com/)** or **[Yarn](https://yarnpkg.com/)**. -->
   <!-- - Then, it's **essencial** install **[Expo](https://expo.io/)** -->
 
 ## :memo: License
