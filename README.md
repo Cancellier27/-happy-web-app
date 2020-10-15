@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src="./web/src/images/logo.svg">
+    <img alt="Logo" title="#logo" width="300px" src="./web/src/images/map-marking.svg">
     <br><br>
     <b>Happy App</b> 
 </h3>
