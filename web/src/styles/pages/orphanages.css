@@ -1,14 +1,14 @@
 #page-map {
   width: 100vw;
   height: 100vh;
-  
+
   position: relative;
   display: flex;
 }
 
 #page-map aside {
   width: 440px;
-  background: linear-gradient(329.54deg, #29b6d1 8%, #00c7c7 100%) ;
+  background: linear-gradient(329.54deg, #29b6d1 8%, #00c7c7 100%);
   padding: 80px;
 
   display: flex;
@@ -31,7 +31,7 @@
 #page-map aside footer {
   display: flex;
   flex-direction: column;
-  
+
   line-height: 24px;
 }
 
@@ -66,4 +66,35 @@
   background: #17d6eb;
 }
 
+#page-map .map-popup .leaflet-popup-content-wrapper {
+  background: rgb(255, 255, 255, 8.8);
+  border-radius: 20px;
+  box-shadow: none;
+}
 
+#page-map .map-popup .leaflet-popup-content {
+  color: #0089a5;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 8px 12px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-map .map-popup .leaflet-popup-content a {
+  width: 40px;
+  height: 40px;
+  background: #15c3d6;
+  box-shadow: 17.2868px 27.6589px 41.4884px rgba(23, 142, 166, 0.16);
+  border-radius: 12px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#page-map .map-popup .leaflet-popup-tip-container {
+  display: none;
+}
