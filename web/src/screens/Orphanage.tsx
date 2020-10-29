@@ -20,7 +20,7 @@ interface Orphanage {
   opening_hours: string;
   open_on_weekends: string;
   images: Array<{
-    id:number;
+    id: number;
     url: string;
   }>
 }
@@ -32,6 +32,7 @@ interface OrphanageParams {
 export default function Orphanage() {
   const params = useParams<OrphanageParams>()
   const [orphanage, setOrphanage] = useState<Orphanage>()
+  const [activeImageIndex, setActiveImageIndex] = useState(0)
 
   useEffect(() => {
     api.get(`orphanages/${params.id}`).then(response => {
@@ -50,14 +51,21 @@ export default function Orphanage() {
 
       <main>
         <div className="orphanage-details">
-          <img src={orphanage.images[0].url} alt={orphanage.name} />
+          <img src={orphanage.images[activeImageIndex].url} alt={orphanage.name} />
 
           <div className="images">
-            {orphanage.images.map(image => {
+            {orphanage.images.map((image, index) => {
               return (
-                <button key={image.id} className="active" type="button">
-                <img src={image.url} alt={orphanage.name} />
-              </button>
+                <button
+                  key={image.id}
+                  className={activeImageIndex === index ? 'active' : ''}
+                  type="button"
+                  onClick={() => {
+                    setActiveImageIndex(index)
+                  }}
+                >
+                  <img src={image.url} alt={orphanage.name} />
+                </button>
               )
             })}
           </div>
@@ -90,7 +98,7 @@ export default function Orphanage() {
 
             <hr />
 
-  <h2>{orphanage.instructions}</h2>
+            <h2>{orphanage.instructions}</h2>
             <p>Venha como se sentir mais à vontade e traga muito amor para dar.</p>
 
             <div className="open-details">
@@ -100,18 +108,18 @@ export default function Orphanage() {
                 {orphanage.opening_hours}
               </div>
               {orphanage.open_on_weekends ? (
-                      <div className="open-on-weekends">
-                      <FiInfo size={32} color="#39CC83" />
+                <div className="open-on-weekends">
+                  <FiInfo size={32} color="#39CC83" />
                       Atendemos <br />
                       fim de semana
-                    </div>
+                </div>
               ) : (
-                <div className="dont-open">
-                <FiInfo size={32} color="#FF669D" />
+                  <div className="dont-open">
+                    <FiInfo size={32} color="#FF669D" />
                 Nao Atendemos <br />
                 fim de semana
-              </div>
-              ) }
+                  </div>
+                )}
             </div>
 
             <button type="button" className="contact-button">
