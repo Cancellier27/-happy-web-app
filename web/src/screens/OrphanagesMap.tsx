@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FiPlus, FiArrowRight } from 'react-icons/fi'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import { LeafletMouseEvent } from 'leaflet'
 
-
+import api from '../services/api'
 import mapMarkerImg from '../images/map-marking.svg'
 import MapIcon from '../utils/mapIcon'
+import MapIconBlue from '../utils/mapIcon-blue'
 
 import '../styles/pages/orphanages-map.css'
-import api from '../services/api'
-import { LeafletMouseEvent } from 'leaflet'
 
 interface Orphanage {
   id: number;
@@ -77,7 +77,7 @@ function OrphanagesMap() {
         {clickPosition.latitude != 0 && (
           <Marker
             interactive={false}
-            icon={MapIcon}
+            icon={MapIconBlue}
             position={[clickPosition.latitude, clickPosition.longitude]}
           />
         )}
