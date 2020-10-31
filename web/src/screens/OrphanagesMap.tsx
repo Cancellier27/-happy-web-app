@@ -7,7 +7,6 @@ import { LeafletMouseEvent } from 'leaflet'
 import api from '../services/api'
 import mapMarkerImg from '../images/map-marking.svg'
 import MapIcon from '../utils/mapIcon'
-import MapIconBlue from '../utils/mapIcon-blue'
 
 import '../styles/pages/orphanages-map.css'
 
@@ -21,7 +20,7 @@ interface Orphanage {
 function OrphanagesMap() {
   const [orphanages, setOrphanages] = useState<Orphanage[]>([])
   const [actualLocation, setActualLocation] = useState({ latitude: 0, longitude: 0 })
-  const [clickPosition, setClickPosition] = useState({ latitude: 0, longitude: 0 })
+
 
   useEffect(() => {
     api.get('orphanages').then(response => {
@@ -37,16 +36,6 @@ function OrphanagesMap() {
     });
 
   }, [])
-
-  function handleMapRegionClick(event: LeafletMouseEvent) {
-    const { lat, lng } = event.latlng
-
-    setClickPosition({
-      latitude: lat,
-      longitude: lng
-    })
-  }
-
 
   return (
     <div id="page-map">
@@ -65,22 +54,11 @@ function OrphanagesMap() {
       </aside>
 
       <Map
-        // center={[-28.5244005, -49.3272206]}
         center={[actualLocation.latitude, actualLocation.longitude]}
         zoom={15}
         style={{ width: '100%', height: '100%' }}
-        onclick={handleMapRegionClick}
       >
-        {/* <TileLayer url="http://a.tile.openstreetmap.org/{z}/{x}/{y}.png" /> */}
         <TileLayer url={`https://api.mapbox.com/styles/v1/mapbox/light-v10/tiles/256/{z}/{x}/{y}@2x?access_token=${process.env.REACT_APP_MAPBOX_TOKEN}`} />
-
-        {clickPosition.latitude != 0 && (
-          <Marker
-            interactive={false}
-            icon={MapIconBlue}
-            position={[clickPosition.latitude, clickPosition.longitude]}
-          />
-        )}
 
         {orphanages.map((orphanage) => {
           return (
