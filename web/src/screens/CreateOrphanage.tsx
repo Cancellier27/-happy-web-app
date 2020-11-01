@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormEvent, useState, useEffect } from "react";
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet'
 
-import { FiPlus } from "react-icons/fi";
+import { FiPlus, FiX } from "react-icons/fi";
 
 import MapIcon from '../utils/mapIcon'
 import Sidebar from '../components/Sidebar'
@@ -34,7 +34,7 @@ export default function CreateOrphanage() {
     })
   }
 
-  
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
 
@@ -83,6 +83,14 @@ export default function CreateOrphanage() {
     })
 
     setPreviewImages(selectedImagesPreview)
+  }
+
+  function handleDeleteImage(INDEX: number) {
+    const filteredPreviewImages = previewImages.filter((item, index) => index !== INDEX)
+    const filteredImages = images.filter((item, index) => index !== INDEX)
+
+    setPreviewImages(filteredPreviewImages)
+    setImages(filteredImages)
   }
 
   return (
@@ -137,17 +145,21 @@ export default function CreateOrphanage() {
               <label htmlFor="images">Fotos</label>
 
               <div className="images-container">
-                {previewImages.map(image => {
+                {previewImages.map((image, index) => {
                   return (
-                    <img src={image} alt={name} key={image} />
+                    <div className="posted-image-container" key={image} >
+                      <img src={image} alt={name} />
+
+                      <button className="delete-image" onClick={() => handleDeleteImage(index)} >
+                        <FiX size={24} color="#FF669D"  />
+                      </button>
+                    </div>
                   )
                 })}
 
                 <label htmlFor="image[]" className="new-image">
                   <FiPlus size={24} color="#15b6d6" />
                 </label>
-
-
               </div>
 
               <input id='image[]' multiple type="file" onChange={handleSelectImages} />

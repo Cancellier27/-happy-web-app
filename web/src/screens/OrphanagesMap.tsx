@@ -28,6 +28,7 @@ function OrphanagesMap() {
     })
 
     navigator.geolocation.getCurrentPosition(function (position) {
+      console.log(position)
 
       setActualLocation({
         latitude: position.coords.latitude,
