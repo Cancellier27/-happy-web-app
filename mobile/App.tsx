@@ -66,7 +66,6 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     borderRadius: 16,
     justifyContent: "center",
-
   },
 
   calloutText: {
@@ -75,15 +74,36 @@ const styles = StyleSheet.create({
   },
 
   footer: {
+    position: 'absolute',
+    left: 24,
+    right: 24,
+    bottom: 32,
 
+
+    backgroundColor: '#fff',
+    borderRadius: 20,
+    height: 56,
+    paddingLeft: 24,
+
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+
+    elevation: 3,
   },
 
   footerText: {
-
+    color: '#8fa7b3'
   },
 
   createOrphanageButton: {
+    width: 56,
+    height: 56,
+    backgroundColor: "#15c3d6",
+    borderRadius: 20,
 
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 
 });
