@@ -1,7 +1,5 @@
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src="./web/src/images/map-marking.svg">
-    <br><br>
-    <b>Happy App</b> 
+    <img alt="Happy" title="Happy" src=".github/logo.svg" />
 </h3>
 
 <p align="center">
@@ -12,43 +10,62 @@
   <img alt="GitHub language count" src="https://img.shields.io/badge/languages-3-brightgreen">
 
   <img alt="Web" src="https://img.shields.io/badge/web-React-blue">
-
 </p>
 
 ## :computer: Web
 
-<h1 align="center">
-    <img alt="Web" src=".github/appImage.png" width="650px">
-</h1>
+<p align="center">
+  <img alt="Happy" src=".github/happy.png" width="100%">
+</p>
 
 
 ## :bookmark: About
 
-App to help finding a Orphanage close to you, where you'll be able to make a kid happy :D.
+Happy is an app that connects you to orphanages around your location, so you can find the orphanage of your choice and make a day in a child's life much better 💜
+
+
 
 ## :rocket: Tech Used
 
 This project was made with the following technologies:
 
-<!-- - [TypeScript](https://www.typescriptlang.org/) -->
 - [Node.js](https://nodejs.org/en/)
-- [ReactJS](https://reactjs.org/)
-- [Typescript](https://www.typescriptlang.org/)
-<!-- - [React Native](https://reactnative.dev/) -->
+- [React](https://reactjs.org)
+- [React Native](https://facebook.github.io/react-native/)
+- [Expo](https://expo.io/)
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## :fire: How to
 
 - ### **Requirements**
 
-  - Still working on this...
+  - It's **necessary** **[Node.js](https://nodejs.org/en/)**
+  - You, **need** a package manager like **[NPM](https://www.npmjs.com/)** or **[Yarn](https://yarnpkg.com/)**.
 
-  <!-- - It's **necessary** **[Node.js](https://nodejs.org/en/)**
-  - You, **need** a package manager like **[NPM](https://www.npmjs.com/)** or **[Yarn](https://yarnpkg.com/)**. -->
-  <!-- - Then, it's **essencial** install **[Expo](https://expo.io/)** -->
+1. Clone the repo :
 
-## :memo: License
+```sh
+  $ git clone https://github.com/Cancellier27/happy-app
+```
 
-This project is under MIT license. [LICENSE](LICENSE.md)
+2. Execute the app:
+
+```sh
+  # Start the server API
+  $ cd ./happy/backend/
+  $ yarn install
+  $ yarn dev
+
+  # Start the web application
+  $ cd ./happy/web
+  $ yarn install
+  $ yarn start
+
+  # Start the mobile application
+  $ cd ./happy/mobile
+  $ yarn start
+  $ scan the QR code with your phone or use an emulator
+```
 
 ## :mailbox_with_mail: Get in touch!
 
