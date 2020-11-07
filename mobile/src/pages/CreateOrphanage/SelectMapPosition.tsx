@@ -12,7 +12,7 @@ export default function SelectMapPosition() {
   const [position, setPosition] = useState({ latitude: 0, longitude: 0 })
 
   function handleNextStep() {
-    navigation.navigate('OrphanageData');
+    navigation.navigate('OrphanageData', { position });
   }
 
   function handleSelectMapPosition(event: MapEvent) {
@@ -23,8 +23,8 @@ export default function SelectMapPosition() {
     <View style={styles.container}>
       <MapView
         initialRegion={{
-          latitude: -27.2092052,
-          longitude: -49.6401092,
+          latitude: -28.516805,
+          longitude: -49.31934,
           latitudeDelta: 0.008,
           longitudeDelta: 0.008,
         }}
