@@ -64,7 +64,7 @@ This project was made with the following technologies:
   # Start the mobile application
   $ cd ./happy/mobile
   $ yarn start
-  $ scan the QR code with your phone or use an emulator
+  -scan the QR code with your phone or use an emulator
 ```
 
 ## :mailbox_with_mail: Get in touch!
