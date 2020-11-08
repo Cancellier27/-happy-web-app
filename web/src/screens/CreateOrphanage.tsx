@@ -24,6 +24,8 @@ export default function CreateOrphanage() {
   const [images, setImages] = useState<File[]>([])
   const [previewImages, setPreviewImages] = useState<string[]>([])
   const [actualLocation, setActualLocation] = useState({ latitude: 0, longitude: 0 })
+  const [errorCheck, setErrorCheck] = useState(false)
+  const [errorMessage, setErrorMessage] = useState<string>()
 
   function handleMapClick(event: LeafletMouseEvent) {
     const { lat, lng } = event.latlng
@@ -45,9 +47,34 @@ export default function CreateOrphanage() {
     });
   }, [])
 
-  async function handleSubmit(event: FormEvent) {
-    event.preventDefault()
+  function informationCheck() {
+    let answer = 'Os seguintes campos faltam serem preenchidos:'
+    let check = false
+    if (position.latitude === 0) {
+      answer += ' Local no Mapa,'
+      check = true
+    }
+    if (name === '') {
+      check = true
+      answer += ' Nome,'
+    }
+    if (about === '') {
+      check = true
+      answer += ' Sobre,'
+    }
+    if (instructions === '') {
+      check = true
+      answer += ' Instruções,'
+    }
+    if (opening_hours === '') {
+      check = true
+      answer += ' Horário de Funcionamento,'
+    }
+    setErrorCheck(check)
+    setErrorMessage(answer)
+  }
 
+  async function postFinalInformationToDataBase() {
     const { latitude, longitude } = position
 
     const data = new FormData()
@@ -67,6 +94,18 @@ export default function CreateOrphanage() {
     await api.post('orphanages', data)
 
     history.push('/orphanages/create/success')
+
+  }
+
+  async function handleSubmit(event: FormEvent) {
+    event.preventDefault()
+    informationCheck()
+
+    if (errorCheck) {
+      return
+    } else {
+      postFinalInformationToDataBase()
+    }
   }
 
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
@@ -99,6 +138,7 @@ export default function CreateOrphanage() {
         <form onSubmit={handleSubmit} className="create-orphanage-form">
           <fieldset>
             <legend>Dados</legend>
+            {errorCheck === true && <div className="errorCheck">{errorMessage}</div>}
 
             <Map
               center={[actualLocation.latitude, actualLocation.longitude]}
@@ -149,7 +189,7 @@ export default function CreateOrphanage() {
                       <img src={image} alt={name} />
 
                       <button className="delete-image" onClick={() => handleDeleteImage(index)} >
-                        <FiX size={24} color="#FF669D"  />
+                        <FiX size={24} color="#FF669D" />
                       </button>
                     </div>
                   )

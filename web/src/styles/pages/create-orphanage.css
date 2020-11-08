@@ -30,6 +30,20 @@
     border: 0;
   }
 
+  form.create-orphanage-form .errorCheck {
+    color: black;
+    width: 100%;
+    height: auto;
+    font-size: 0.9em;
+    border-radius: 20px;
+    background: linear-gradient(154.16deg, #ffe8db 7.85%, #fff3f3 91.03%);
+    border: 1px solid #FFBCD4;
+    padding: 10px;
+    margin-bottom: 15px;
+  }
+
+
+
   form.create-orphanage-form fieldset+fieldset {
     margin-top: 80px;
   }

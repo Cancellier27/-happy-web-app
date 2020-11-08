@@ -79,3 +79,29 @@
 .content-wrapper .enter-app:hover {
   background: #96feff;
 }
+
+.content-wrapper .login-page {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  width: 222px;
+  height: 56px;
+  background: #12D4E0;
+  color: #fff;
+  border-radius: 20px;
+
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.content-wrapper .login-page:hover {
+  background: #96FEFF;
+  color: #15C3D6;
+}
