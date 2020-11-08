@@ -1,15 +1,15 @@
 import React, { ChangeEvent, FormEvent, useState, useEffect } from "react";
 import { Map, Marker, TileLayer } from 'react-leaflet';
 import { LeafletMouseEvent } from 'leaflet'
-
+import { useHistory } from "react-router-dom";
 import { FiPlus, FiX } from "react-icons/fi";
 
 import MapIcon from '../utils/mapIcon'
 import Sidebar from '../components/Sidebar'
+import api from "../services/api";
+
 
 import '../styles/pages/create-orphanage.css';
-import api from "../services/api";
-import { useHistory } from "react-router-dom";
 
 
 export default function CreateOrphanage() {
@@ -66,9 +66,7 @@ export default function CreateOrphanage() {
 
     await api.post('orphanages', data)
 
-    alert('Cadastro realizado com sucesso!')
-
-    history.push('/app')
+    history.push('/orphanages/create/success')
   }
 
   function handleSelectImages(event: ChangeEvent<HTMLInputElement>) {
@@ -184,6 +182,7 @@ export default function CreateOrphanage() {
                 id="opening_hours"
                 value={opening_hours}
                 onChange={event => setOpeningHours(event.target.value)}
+                placeholder="ex: 8:00h até as 13:00h"
               />
             </div>
 
