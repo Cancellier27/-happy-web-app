@@ -7,6 +7,7 @@ import Orphanage from './screens/Orphanage'
 import CreateOrphanage from './screens/CreateOrphanage'
 import SuccessfulPage from './components/SuccessfulRegistrationPage'
 import ErrorPage from './components/pageNotFound'
+import LoginPage from './screens/loginPage'
 
 function Routes() {
   return (
@@ -18,6 +19,11 @@ function Routes() {
       <Route path="/orphanages/create/success" component={SuccessfulPage} />
       <Route path="/orphanages/create" component={CreateOrphanage} />
       <Route path="/orphanages/:id" component={Orphanage} />
+
+      <Route path="/login" component={LoginPage} />
+
+
+
       <Route path='*' component={ErrorPage} />
       </Switch>
     </BrowserRouter>
